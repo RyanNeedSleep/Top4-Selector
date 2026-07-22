@@ -1,3 +1,8 @@
+/*
+Controlling the input/write stage of the Regset
+*/
+
+
 module fsm(
     input rst_n,
     input logic clk,

@@ -1,3 +1,9 @@
+/*
+Testing the integration between:
+1. sort8
+2. RegSet
+3. FSM control
+*/
 import pkg::*;
 
 module integrate_tb;
@@ -52,10 +58,10 @@ module integrate_tb;
         blkIn     = 1'b0;
 
 
-        // reset 至少跨過幾個 posedge
+
         repeat (2) @(posedge clk);
 
-        // 不在 posedge 上解除 reset
+
         @(negedge clk);
 
         rst_n <= 1'b1;

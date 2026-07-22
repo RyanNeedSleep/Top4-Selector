@@ -1,3 +1,6 @@
+/*
+Checking the correctness of the FSM transition
+*/
 `timescale 1ns / 1ps
 
 module fsm_tb;

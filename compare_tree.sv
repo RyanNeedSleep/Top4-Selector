@@ -16,5 +16,4 @@ module CompTree(
         max_val = (a > b) ? a : b;
         winner = (a > b) ? i : j;
     end
-
 endmodule

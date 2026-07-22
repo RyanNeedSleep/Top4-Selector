@@ -1,12 +1,11 @@
 /*
 Controlling the input/write stage of the Regset
 */
-
-
-module fsm(
+module write_ctrl(
     input rst_n,
     input logic clk,
     input logic blkIn,
+
     output logic wbank,
     output logic [1:0] wgroup,
     output logic wena

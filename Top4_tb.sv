@@ -42,27 +42,8 @@ module Top4_tb;
     // ============================================================
 
     initial begin
-        $dumpfile("Top4.vcd");
-        $dumpvars(0, Top4_tb);
-
-        $dumpvars(0, clk);
-        $dumpvars(0, rst_n);
-        $dumpvars(0, blkIn);
-
-        $dumpvars(0, idata[0]);
-        $dumpvars(0, idata[1]);
-        $dumpvars(0, idata[2]);
-        $dumpvars(0, idata[3]);
-        $dumpvars(0, idata[4]);
-        $dumpvars(0, idata[5]);
-        $dumpvars(0, idata[6]);
-        $dumpvars(0, idata[7]);
-
-        $dumpvars(0, outrank);
-        $dumpvars(0, result);
-        $dumpvars(0, out_valid);
-
-        $dumpvars(0, dut);
+        $fsdbDumpfile("wave.fsdb");
+        $fsdbDumpvars(0, Top4_tb, "+all");
     end
 
     // ============================================================

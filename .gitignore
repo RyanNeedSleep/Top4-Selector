@@ -10,3 +10,4 @@ sim_build/
 results.xml
 .venv/
 *.swp
+pip-wheel-metadata/

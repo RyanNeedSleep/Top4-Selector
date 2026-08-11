@@ -5,11 +5,21 @@ A SystemVerilog implementation of a 32-input Top-4 selector. Each input block co
 ## Requirements
 
 - Python 3
-- [Icarus Verilog](https://steveicarus.github.io/iverilog/)
-- [cocotb](https://www.cocotb.org/)
+- [Icarus Verilog](https://steveicarus.github.io/iverilog/) on `PATH`
 - Optional: [GTKWave](https://gtkwave.github.io/gtkwave/) for waveform viewing
 
-## Run the test
+## Setup and run
+
+Create and activate a virtual environment, then install the Python dependencies:
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+Run the cocotb test:
 
 ```sh
 make
@@ -40,5 +50,6 @@ src/                 Active SystemVerilog RTL
 tb/cocotb/           cocotb transaction-based testbench
 tb/sv/               Standalone SystemVerilog testbenches
 tb/legacy/           Older testbench experiments
+requirements.txt     Python dependencies
 Makefile             Icarus Verilog and cocotb configuration
 ```

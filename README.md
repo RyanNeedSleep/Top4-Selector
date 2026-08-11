@@ -1,6 +1,6 @@
-# Tpo4-Selector
+# Top4 Selector
 
-A SystemVerilog implementation of a 32-input Top-4 selector. Inputs arrive as four 8-lane groups; the DUT outputs the four largest signed 9-bit values.
+A SystemVerilog implementation of a 32-input Top-4 selector. Each input block contains four 8-lane groups; the DUT outputs the four largest signed 9-bit values.
 
 ## Requirements
 
@@ -15,30 +15,16 @@ A SystemVerilog implementation of a 32-input Top-4 selector. Inputs arrive as fo
 make
 ```
 
-The active cocotb test is configured in `Makefile`:
-
-```make
-COCOTB_TEST_MODULES = test_top4_txn
-COCOTB_TOPLEVEL = Top4
-```
-
-`test_top4_txn.py` drives random input transactions with random inter-transaction idle cycles. It uses a reference model, transaction queues, a concurrent driver/monitor/scoreboard flow, and a whole-test timeout.
+The active cocotb test is `tb.cocotb.test_top4_txn`. It generates random input transactions and inter-transaction idle cycles, then verifies the results with a concurrent driver, monitor, queue-based scoreboard, reference model, and timeout.
 
 ## View waveforms
 
-Generate an FST waveform while running the test:
-
 ```sh
 make WAVES=1
-```
-
-Open the generated waveform:
-
-```sh
 gtkwave sim_build/Top4.fst
 ```
 
-Useful signals to inspect:
+Useful signals:
 
 ```text
 clk rst_n blkIn
@@ -47,16 +33,12 @@ out_valid outrank result
 idata0_dbg ... idata7_dbg
 ```
 
-## Main files
+## Layout
 
 ```text
-Top4.sv            Top-level DUT
-sort8.sv            8-input sorting network
-Regset.sv           Banked storage for sorted groups
-write_ctrl.sv       Input/write controller
-merge_ctrl.sv       Top-4 merge controller
-CompTree.sv         Four-way maximum comparator tree
-test_top4_txn.py    cocotb transaction-based testbench
-Makefile            Simulator and cocotb configuration
+src/                 Active SystemVerilog RTL
+tb/cocotb/           cocotb transaction-based testbench
+tb/sv/               Standalone SystemVerilog testbenches
+tb/legacy/           Older testbench experiments
+Makefile             Icarus Verilog and cocotb configuration
 ```
->>>>>>> 093dda4 (Add concurrent Top4 verification flow and documentation)

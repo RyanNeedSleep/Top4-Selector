@@ -3,3 +3,10 @@
 sim
 *.out
 *.vvp
+*.fst
+*.py[cod]
+__pycache__/
+sim_build/
+results.xml
+.venv/
+*.swp

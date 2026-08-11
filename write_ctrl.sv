@@ -40,6 +40,9 @@ module write_ctrl(
                         state <= IDLE;
                         wbank <= ~wbank;
                     end
+                    default: begin
+                        state <= IDLE;
+                    end
                 endcase
         end
     end
@@ -67,6 +70,11 @@ module write_ctrl(
             LOAD3: begin
                 wgroup = 2'd3;
                 wena = 1;
+            end
+
+            default: begin
+                wena = 1'b0;
+                wgroup = 2'd0;
             end
         endcase
     end

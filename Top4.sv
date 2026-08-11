@@ -13,6 +13,16 @@ module Top4(
     output logic out_valid
 );
 
+
+    wire signed [8:0] idata0_dbg = idata[0];
+    wire signed [8:0] idata1_dbg = idata[1];
+    wire signed [8:0] idata2_dbg = idata[2];
+    wire signed [8:0] idata3_dbg = idata[3];
+    wire signed [8:0] idata4_dbg = idata[4];
+    wire signed [8:0] idata5_dbg = idata[5];
+    wire signed [8:0] idata6_dbg = idata[6];
+    wire signed [8:0] idata7_dbg = idata[7];
+
     data_t sorted_data [0:7];
     logic wbank;
     logic [1:0] wgroup;

@@ -13,6 +13,6 @@ VERILOG_SOURCES = \
 COMPILE_ARGS += -g2012
 
 COCOTB_TOPLEVEL = Top4
-COCOTB_TEST_MODULES = test_top4
+COCOTB_TEST_MODULES = test_top4_txn
 
 include $(shell cocotb-config --makefiles)/Makefile.sim
